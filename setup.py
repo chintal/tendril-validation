@@ -17,7 +17,7 @@ requirements = [
     'six',
     'colorama',
     'tendril-utils-terminal>=0.1.1',
-    'tendril-utils-core>=0.1.4',
+    'tendril-utils-core>=0.1.11',
 ]
 
 test_requirements = [
@@ -26,7 +26,7 @@ test_requirements = [
 
 setup(
     name='tendril-validation',
-    version='0.1.1',
+    version='0.1.2',
     description="Validation Infrastructure for Tendril",
     long_description=readme,
     author="Chintalagiri Shashank",

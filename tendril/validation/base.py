@@ -68,7 +68,10 @@ class ValidationContext(object):
             return self.mod
 
     def render(self):
-        return self.locality
+        if self.locality:
+            return self.locality
+        else:
+            return self.mod
 
 
 class ValidationPolicy(object):
@@ -95,6 +98,12 @@ class ValidationError(Exception):
             'headline': self._policy.context.render(),
             'detail': self.detail,
         }
+
+    def __str__(self):
+        rd = self.render()
+        return "{0}\n\t{1}\n\t{2}".format(
+            rd['group'], rd['headline'], rd['detail']
+        )
 
 
 class ErrorCollector(ValidationError):
