@@ -28,14 +28,14 @@ logger = log.get_logger(__name__, log.DEFAULT)
 
 
 class ValidatableBase(object):
-    def __init__(self):
+    def __init__(self, vctx=None):
         self._validated = False
-        self._validation_context = None
+        self._validation_context = vctx
         self._validation_errors = ErrorCollector()
 
     @property
     def ident(self):
-        raise NotImplementedError
+        return '<unidentifiable {0}>'.format(self.__class__.__name__)
 
     @ident.setter
     def ident(self, value):
