@@ -26,7 +26,7 @@ test_requirements = [
 
 setup(
     name='tendril-validation',
-    version='0.1.3',
+    version='0.1.4',
     description="Validation Infrastructure for Tendril",
     long_description=readme,
     author="Chintalagiri Shashank",

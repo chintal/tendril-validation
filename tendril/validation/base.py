@@ -19,6 +19,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
+from copy import copy
 from colorama import Style
 from colorama import Fore
 
@@ -72,6 +73,13 @@ class ValidationContext(object):
             return self.locality
         else:
             return self.mod
+
+    def child(self, locality):
+        if self.locality:
+            locality = '/'.join([self.locality, locality])
+        cctx = copy(self)
+        cctx.locality = locality
+        return cctx
 
 
 class ValidationPolicy(object):
